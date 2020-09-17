@@ -3,7 +3,7 @@
 class Pessoa:#super classe
     def __init__(self, nome, sobrenome, cpf, rg, sexo):
         """Retorna informacoes gerais das pessoas"""
-        
+
         self.__nome = nome
         self.__sobrenome = sobrenome
         self.__cpf = cpf
