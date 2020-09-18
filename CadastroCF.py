@@ -26,17 +26,18 @@ class Funcionario(Pessoa):
         super().__init__(nome, sobrenome, cpf, rg, sexo)
         self.__matricula = matricula
 
-class ClienteFuncionario(Cliente, Funcionario):##Herança multipla. Herda Cliente e funcionario diretamente e herda Pessoa indiretamemnte
-    def __init__(self, nome, sobrenome, cpf, rg, sexo):
-        super().__init__(nome, sobrenome, cpf, rg, sexo)
+class Aposentado(Funcionario):##Herança multipla. Herda Funcionario diretamente e herda Pessoa indiretamemnte
+    def __init__(self, nome, sobrenome, cpf, rg, sexo, matricula, saldo):
+        super().__init__(nome, sobrenome, cpf, rg, sexo, matricula)
+        self.__saldo = saldo
 
 
 
-#cliente1 = Cliente('marcelo', "claro", 22233366656, 986574959, "M", 5000)
-#print(cliente1.imprimir_dados())
+cliente1 = Cliente('marcelo', "claro", 22233366656, 986574959, "M", 5000)
+print(cliente1.imprimir_dados())
 
-#funcionario1 = Funcionario("Gertrudez", "Python", 74185298754, 784596824, "F", "BB1569AP96")
-#print(funcionario1.imprimir_dados())
+funcionario1 = Funcionario("Gertrudez", "Python", 74185298754, 784596824, "F", "BB1569AP96")
+print(funcionario1.imprimir_dados())
 
-cliente_funcionario = ClienteFuncionario("Gertrudez", "Python", 74185298754, 784596824, "F")
-print(cliente_funcionario.imprimir_dados())
+aposentado = Aposentado("Gertrudez", "Python", 74185298754, 784596824, "F", "BB1569AP96", 500)
+print(aposentado.imprimir_dados())
